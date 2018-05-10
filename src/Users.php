@@ -24,7 +24,7 @@ class Users extends AbstractObject {
      *
      * GET /users/roles.json
      */
-    public function find()
+    public function getAvailableRoles()
     {
         return $this->client->get("{$this->endpoint}/roles")->response();
     }
