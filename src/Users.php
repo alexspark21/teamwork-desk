@@ -20,6 +20,16 @@ class Users extends AbstractObject {
     }
 
     /**
+     * A list of the available user roles for this installation, based on the plan chosen
+     *
+     * GET /users/roles.json
+     */
+    public function find()
+    {
+        return $this->client->get("{$this->endpoint}/roles")->response();
+    }
+
+    /**
      * Get All API Keys
      * GET /users/{user_id}/apikeys.json
      *

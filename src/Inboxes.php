@@ -22,7 +22,7 @@ class Inboxes extends AbstractObject {
     {
         $this->areArgumentsValid($args, ['ticketCounts']);
 
-        return $this->client->get("$this->endpoint/$this->id", $args)->response();
+        return $this->client->get("$this->endpoint/$this->id", $args)->response()[$this->wrapper];
     }
 
 

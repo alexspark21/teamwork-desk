@@ -15,7 +15,7 @@ trait RestfulTrait {
      */
     public function find()
     {
-        return $this->client->get("$this->endpoint/$this->id")->response();
+        return $this->client->get("$this->endpoint/$this->id")->response()[$this->wrapper];
     }
 
     /**
