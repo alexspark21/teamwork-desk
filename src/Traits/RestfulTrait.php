@@ -19,19 +19,21 @@ trait RestfulTrait {
     }
 
     /**
-     * @return array
+     * @param array $data
+     * @return mixed
      */
-    public function create($data)
+    public function create(array $data)
     {
-        return $this->client->post("$this->endpoint", [$this->wrapper => $data])->response();
+        return $this->client->post("$this->endpoint", $data)->response();
     }
 
     /**
+     * @param array $data
      * @return mixed
      */
-    public function update($data)
+    public function update(array $data)
     {
-        return $this->client->put("$this->endpoint/$this->id", [$this->wrapper => $data])->response();
+        return $this->client->put("$this->endpoint/$this->id", $data)->response();
     }
 
     /**
