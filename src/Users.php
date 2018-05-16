@@ -16,7 +16,7 @@ class Users extends AbstractObject {
      */
     public function me()
     {
-        return $this->client->get("me")->response();
+        return $this->client->get("me")->response()[$this->wrapper];
     }
 
     /**
@@ -27,6 +27,20 @@ class Users extends AbstractObject {
     public function getAvailableRoles()
     {
         return $this->client->get("{$this->endpoint}/roles")->response();
+    }
+
+    /**
+     *
+     * Invite Users
+     *
+     * POST /users/invite.json
+     *
+     * @param array $data
+     * @return mixed
+     */
+    public function inviteUsers(array $data)
+    {
+        return $this->client->post("{$this->endpoint}/invite", $data)->response();
     }
 
     /**

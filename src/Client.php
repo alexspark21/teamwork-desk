@@ -149,7 +149,7 @@ class Client implements RequestableInterface {
 
         if (count($params) > 0)
         {
-            $options['form_params'] = $params;
+            $options['json'] = $params;
         }
 
         if ($query != null)
